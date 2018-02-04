@@ -1,1 +1,48 @@
+std::vector<int> vect;
+std::vector<int>::iterator it = vect.begin();
 
+same can be wriiten as 
+auto it = vect.begin();
+
+The compiler will use the type of the initializing expression vect.begin(), which is std::vector<int>::iterator, as the type of the variable it.
+ 
+ 
+The rule for deduce the type of variable is somewhat same as how template deduce the type.
+Auto will ignore reference, const and volatile qualifier from its initializing expression
+
+Some examples are :
+
+1)
+   int x = int();
+   const int& y = x
+   auto z = y
+   
+   Now type of z is int , because auto will strip out const and reference
+   
+2)
+
+  const int c = 0;
+  auto& rc = c;
+  rc = 44; // ERROR
+  
+  because first auto will remove const from c , then add refernce to rc , now rc is int reference to c(which is const)
+  
+ 3)
+   
+     int i = 42;
+     auto&& r1 = i;
+     auto&& r2 = 42;
+  
+     If the intializing expression is an lvalue, an && auto first performs its ordinary type deduction, then adds an lvalue reference to that.
+     If the intializing expression is an rvalue, an && auto just performs its ordinary type deduction.
+  
+     auto&& r1 = i;
+    
+    auto first deduces the type int then it sees that i is an lvalue. Therefore, in its second step, auto adds an lvalue reference, ending up with type int&. Together with the &&, that gives int& &&. By the reference collapsing rules that were introduced with C++11, & && collapses to &, and therefore, the end result is int&.
+    
+    auto&& = 42
+    auto again deduces the type int. Then it sees that 42 is an rvalue, and thus, no further processing takes place. Due to the &&, the end result is int&&.     
+    (&& - this is for Rvalue References(we can add it to topics))
+ 
+
+Good Article -->   http://thbecker.net/articles/auto_and_decltype/section_01.html
