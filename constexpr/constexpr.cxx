@@ -10,9 +10,6 @@
 #include <iostream>
 using namespace std;
 
-int A=10;
-int B=30;
-
 constexpr int multiply( int x, int y)
 {
 	return (x*y);
@@ -41,7 +38,6 @@ constexpr int multiply_1( int x, int y)
 int main ()
 {
 	int x = multiply(10,20);
-	int y = multiply(A, B);
 	cout << "x =" << x << endl << "y =" << y <<endl;
 	return 0;
 }
