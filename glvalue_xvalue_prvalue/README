@@ -1,1 +1,4 @@
 https://github.com/jeaye/value-category-cheatsheet/blob/master/value-category-cheatsheet.pdf
+
+Why string is a lvalue ?
+https://eklitzke.org/c-string-literals-are-lvalues
