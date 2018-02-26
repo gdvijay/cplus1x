@@ -7,3 +7,5 @@ https://github.com/jeaye/value-category-cheatsheet/blob/master/value-category-ch
 
 Why string is a lvalue ?
 https://eklitzke.org/c-string-literals-are-lvalues
+
+http://en.cppreference.com/w/cpp/language/value_category
