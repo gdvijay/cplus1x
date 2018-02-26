@@ -1,6 +1,7 @@
 What are lvalue references ?
 
 What are rvalue references ?
+https://progmar.wordpress.com/2012/10/08/rvalue-lvalue-prvalue-xvalue-glvalue-what-are-those/
 https://www.cprogramming.com/c++11/rvalue-references-and-move-semantics-in-c++11.html
 
 https://github.com/jeaye/value-category-cheatsheet/blob/master/value-category-cheatsheet.pdf
