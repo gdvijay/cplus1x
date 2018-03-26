@@ -18,5 +18,5 @@ int main()
     g(0);              // Fine
  
     Fwd(g, nullptr);   // Fine
-    Fwd(g, NULL);  // ERROR: No function g(int)
+    //Fwd(g, NULL);  // ERROR: No function g(int)
 }
