@@ -1,0 +1,41 @@
+1) pack is an unexpanded parameter pack
+2) op an operator 
+3) init a value.
+4) Only some operators (+,*,&,|,&&,||, ,) have defined init values and can be used with the versions (1) and (2).
+5)  (P1 op (P2 op (P3 ... (PN-1 op PN)))). 
+
+
+
+( pack op ... )             //(1)   pack1 op (... op (packN-1 op packN))
+
+template<typename... T>
+auto fold_sum_1(T... s){
+    return (s+ ... );
+}
+
+
+
+( ... op pack )             //(2)    ((pack1 op pack2) op ...) op packN
+template<typename... T>
+auto fold_sum_1(T... s){
+    return (... + s);
+}
+
+
+
+
+( pack op ... op init )     //(3)   	pack1 op (... op (packN-1 op (packN op init)))
+
+template<typename... T>
+auto fold_sum_1(T... s){
+    return (s+... +0);
+}
+
+
+
+
+( init op ... op pack )     //(4)  (((init op pack1) op pack2) op ...) op packN
+template<typename... T>
+auto fold_sum_1(T... s){
+    return (0+... + s);
+}
