@@ -1,0 +1,44 @@
+1.	Structured bindings
+	  std::tuple
+	  std::tie std::bind 
+	  Destructurable types
+2.	Range 
+3.	Selection sequence with initializers
+
+	   With if statement it is possible to initialize
+           if (init; condition)
+
+4.	Decrypt the below snippet
+
+/--------------------------/
+template <typename Key, typename F>
+void emplace_or_throw(std::set<Key>& m, Key&& k, F f)
+{
+  if (auto [it, s] = m.emplace(std::forward<Key>(k)); !s)
+    throw /* ... */
+  else
+    f(*it);
+}
+/-------------------------/
+ 
+5.	SFINAE
+
+	Substitution failure is not an error (SFINAE) refers to a situation in C++ where an invalid substitution of template parameters is not in itself an error.
+	is_constructible, 
+	enable_if
+ 
+6.	Type traits http://en.cppreference.com/w/cpp/header/type_traits 
+ 	  std::is_constructible, 
+	  std::is_trivially_constructible, 
+	  std::is_nothrow_constructible
+7	Iterators
+ 	  std::input_iterator_tag, 
+	  std::output_iterator_tag, 
+	  std::forward_iterator_tag,
+	  std::bidirectional_iterator_tag, 
+	  std::random_access_iterator_tag
+          std::iterator_traits
+ 
+8.	How I is accessed inside get ?
+ 
+
