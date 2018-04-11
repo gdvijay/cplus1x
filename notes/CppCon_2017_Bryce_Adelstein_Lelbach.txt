@@ -22,6 +22,7 @@ void emplace_or_throw(std::set<Key>& m, Key&& k, F f)
 /-------------------------/
  
 5.	SFINAE
+6.      Discreminated Union
 
 	Substitution failure is not an error (SFINAE) refers to a situation in C++ where an invalid substitution of template parameters is not in itself an error.
 	is_constructible, 
