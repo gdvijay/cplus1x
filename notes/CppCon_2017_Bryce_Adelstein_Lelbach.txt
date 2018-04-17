@@ -41,7 +41,8 @@ void emplace_or_throw(std::set<Key>& m, Key&& k, F f)
           std::iterator_traits
  
 8.	How I is accessed inside get ?
- 
+
+
 variant visitor
 
 
@@ -146,3 +147,10 @@ struct binary_tree
 	
 	
 std::any
+
+9. variant
+10. discriminated union c++
+11. Access uses the visitor pattern
+12. std::decay_t
+13. std::visit
+
